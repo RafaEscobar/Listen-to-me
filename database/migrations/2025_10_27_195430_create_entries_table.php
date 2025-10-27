@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Space;
 
 return new class extends Migration
 {
@@ -13,6 +14,10 @@ return new class extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
+            $table->text('description');
+            $table->foreignIdFor(Space::class)
+                ->constrained('spaces')
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }
