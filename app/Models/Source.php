@@ -11,4 +11,9 @@ class Source extends Model
         'duration',
         'entry_id'
     ];
+
+    //* Relación hacia Entry (1:1)
+    public function entry() {
+        return $this->belongsTo(Entry::class);
+    }
 }

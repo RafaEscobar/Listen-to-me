@@ -11,4 +11,9 @@ class Answer extends Model
         'is_correct',
         'question_id'
     ];
+
+    //* Relación hacia Answer (1:N)
+    public function question() {
+        return $this->belongsTo(Question::class);
+    }
 }

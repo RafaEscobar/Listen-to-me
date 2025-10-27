@@ -48,4 +48,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //* Relación hacia Spaces (1:N)
+    public function spaces(){
+        return $this->hasMany(Space::class);
+    }
 }
