@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entry extends Model
 {
-    //
+    protected $fillable = [
+        'description',
+        'category_id'
+    ];
 }
