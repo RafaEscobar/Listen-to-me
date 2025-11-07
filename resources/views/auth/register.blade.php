@@ -1,4 +1,4 @@
-<x-auth-layout>
+<x-auth-layout :isLogin=false>
     <div class="flex flex-col gap-8 bg-white rounded-xl p-4 mb-6">
         <input
             type="text"
