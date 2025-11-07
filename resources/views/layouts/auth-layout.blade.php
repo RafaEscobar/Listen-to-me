@@ -17,7 +17,7 @@
             <div class="w-full md:w-2/4 p-6">
                     <h1>Mensaje #1</h1>
                     <div class="flex gap-x-2 mb-4">
-                        <a href="{{route('login')}}"><p>Iniciar sesión</p></a>
+                        <a href="{{route('welcome')}}"><p>Iniciar sesión</p></a>
                         <p>|</p>
                         <a href="{{route('register')}}"><p>Registrarme</p></a>
                     </div>
