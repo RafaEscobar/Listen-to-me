@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 //* Vista de inicio de sesión
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+})->name('login');
 //* Vista de registro
 Route::get('/register', function(){
     return view('auth.register');

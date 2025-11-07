@@ -17,7 +17,7 @@ class UserController extends Controller
     {
         try {
             User::create($request->validated());
-            return route('dashboard');
+            return redirect()->route('dashboard');
         } catch (\Throwable $th) {
             dd($th->getMessage());
             return $th->getMessage();
