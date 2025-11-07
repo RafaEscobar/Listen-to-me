@@ -3,6 +3,8 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 //* Vista de inicio de sesión
 Route::get('/', function () {
@@ -19,8 +21,23 @@ Route::prefix('users')->controller(UserController::class)->group(function(){
     Route::post('/login', 'login')->name('user.login');
 });
 
+Route::get('/email/verify', fn() => view('auth.verify-email'))
+    ->middleware('auth')
+    ->name('verification.notice');
 
-Route::middleware(['auth'])->group(function () {
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect()->route('dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+//* Rutas protegidas
+Route::middleware(['auth', 'verified'])->group(function () {
+    //* Dashboard
     Route::controller(DashboardController::class)->group(function(){
         Route::get('/dashboard', 'index')->name('dashboard');
     });
