@@ -23,7 +23,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email' => 'required|email|max:60',
-            'password' => 'required|password|min:8|max:24'
+            'password' => 'required|min:8|max:24'
         ];
     }
 
@@ -35,7 +35,6 @@ class LoginRequest extends FormRequest
             'email.max' => 'El correo electrónico no debe exceder los 60 caracteres.',
 
             'password.required' => 'La contraseña es obligatoria.',
-            'password.password' => 'La contraseña no cumple con el formato requerido.',
             'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
             'password.max' => 'La contraseña no debe exceder los 24 caracteres.',
         ];
