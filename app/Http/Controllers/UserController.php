@@ -19,7 +19,8 @@ class UserController extends Controller
             User::create($request->validated());
             return route('dashboard');
         } catch (\Throwable $th) {
-            return response()->json(['message' => $th->getMessage()]);
+            dd($th->getMessage());
+            return $th->getMessage();
         }
     }
 }

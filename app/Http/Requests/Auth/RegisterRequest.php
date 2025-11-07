@@ -11,7 +11,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,8 @@ class RegisterRequest extends FormRequest
             'name' => 'required|string|max:40',
             'last_name' => 'required|string|max:60',
             'email' => 'required|email|max:60',
-            'password' => 'required|password|min:8|max:24'
+            'password' => 'required|min:8|max:24',
+            'confirmPass' => 'required|min:8|max:24|same:password',
         ];
     }
 
@@ -45,9 +46,13 @@ class RegisterRequest extends FormRequest
             'email.max' => 'El correo electrónico no debe exceder los 60 caracteres.',
 
             'password.required' => 'La contraseña es obligatoria.',
-            'password.password' => 'La contraseña no cumple con el formato requerido.',
             'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
             'password.max' => 'La contraseña no debe exceder los 24 caracteres.',
+
+            'confirmPass.required' => 'Debes confirmar la contraseña.',
+            'confirmPass.min' => 'La contraseña debe tener al menos 8 caracteres.',
+            'confirmPass.max' => 'La contraseña no debe exceder los 24 caracteres.',
+            'confirmPass.same' => 'Las contraseñas no coinciden.',
         ];
     }
 }

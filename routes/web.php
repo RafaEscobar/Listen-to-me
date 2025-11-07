@@ -15,8 +15,8 @@ Route::get('/register', function(){
 
 //* Rutas para registro, inicio de sesión y recuperación de contraseña
 Route::prefix('users')->controller(UserController::class)->group(function(){
-    Route::post('/register', 'store');
-    Route::post('/login', 'login');
+    Route::post('/register', 'store')->name('user.register');
+    Route::post('/login', 'login')->name('user.login');
 });
 
 

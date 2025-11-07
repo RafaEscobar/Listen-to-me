@@ -29,7 +29,7 @@
                         </div>
                     @endif
                     <div class="text-center">
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                        <button type="submit" form="{{ $isLogin ? 'formLogin' : 'formRegister' }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
                            {{ $isLogin ? 'Iniciar sesión' : 'Registrarme' }}
                         </button>
                     </div>
