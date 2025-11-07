@@ -10,30 +10,42 @@
 </head>
 
 <body>
-    <div class="mx-auto">
-        <!-- Contenedor principal: en pantallas pequeñas es una sola columna, en md+ es fila -->
-        <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <!-- Columna izquierda: placeholder. Se oculta en pantallas pequeñas (hidden) -->
-            <aside class="hidden md:block md:w-1/3">
-                <div class="bg-gray-200 border border-dashed border-gray-300 rounded-lg h-64 md:h-auto flex items-center justify-center">
-                    <span class="text-gray-500">Placeholder</span>
+    <div class="h-screen p-26 bg-cyan-300">
+        <div class="flex flex-col md:flex-row gap-6 h-full bg-white rounded-xl">
+            <div class="w-full md:w-2/4 p-6">
+                <h1>Mensaje #1</h1>
+                <div class="flex gap-x-2 mb-4">
+                    <p>Iniciar sesión</p>
+                    <p>|</p>
+                    <p>Registrarme</p>
                 </div>
-            </aside>
-            <!-- Columna derecha: contenido. Ocupa todo el ancho en móviles, y 2/3 en md+ -->
-            <main class="w-full md:w-2/3 text-center bg-amber-400">
-                <article class="prose prose-lg">
-                    <h1>Lorem ipsum dolor sit amet</h1>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
-                        cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-                        ipsum. </p>
-                    <p> Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu
-                        eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                        himenaeos. </p>
-                    <p> Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque
-                        nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.
-                    </p>
-                </article>
-            </main>
+                <div class="flex flex-col gap-8 bg-white rounded-xl p-4 mb-6">
+                    <input
+                    type="text"
+                    placeholder="Correo electrónico"
+                    class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <input
+                    type="text"
+                    placeholder="Contraseña"
+                    class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                </div>
+                <div class="flex gap-x-2 w-full justify-between mb-8">
+                    <p>Recuerdame</p>
+                    <p>Olvide mi contraseña</p>
+                </div>
+                <div class="text-center">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                        Iniciar sesión
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-2/4">
+                <div class="bg-gray-200 border border-dashed border-gray-300 rounded-lg h-64 md:h-auto flex items-center justify-center">
+                    <span class="text-gray-500">#Aquí va nuestra imagen#</span>
+                </div>
+            </div>
         </div>
     </div>
 </body>
