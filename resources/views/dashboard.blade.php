@@ -1,3 +1,3 @@
 <x-app-layout>
-    DASH
+    <main>dedede</main>
 </x-app-layout>

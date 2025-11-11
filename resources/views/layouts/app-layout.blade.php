@@ -8,8 +8,11 @@
     <title>Listen To Me</title>
 </head>
 <body class="h-screen w-screen flex bg-gray-100">
-    <div class="h-screen w-screen ">
-        {{$slot}}
-    </div>
+    <x-sidebar active="dashboard" />
+
+    <main class="flex-1 p-2 lg:ml-64">
+        {{ $slot }}
+    </main>
 </body>
+
 </html>
