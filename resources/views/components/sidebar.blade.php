@@ -40,15 +40,15 @@
 
     <!-- Menu -->
     <nav class="px-2 py-4 space-y-1">
-        <a href="" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ $active === 'dashboard' ? 'bg-gray-900' : '' }}">
+        <a href="{{route('dashboard')}}" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ $active === 'dashboard' ? 'bg-gray-900' : '' }}">
             <x-fas-table-columns class="w-6"/>
             <span class="text-lg">Espacios</span>
         </a>
-        <a href="" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ $active === 'posts' ? 'bg-gray-900' : '' }}">
+        <a href="{{route('entries.index')}}" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ $active === 'entries' ? 'bg-gray-900' : '' }}">
             <x-fas-file-lines class="w-5" />
             <span class="text-lg">Posts</span>
         </a>
-        <a href="" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ $active === 'users' ? 'bg-gray-900' : '' }}">
+        <a href="{{route('users.index')}}" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ $active === 'users' ? 'bg-gray-900' : '' }}">
             <x-fas-users class="w-6" />
             <span class="text-lg">Usuarios</span>
         </a>

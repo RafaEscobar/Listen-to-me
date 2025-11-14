@@ -1,3 +1,3 @@
 <x-app-layout>
-    <main>DASHBOARD</main>
+    <main>USERS</main>
 </x-app-layout>

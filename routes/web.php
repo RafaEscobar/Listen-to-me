@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EntryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -28,6 +29,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //* Dashboard
     Route::controller(DashboardController::class)->group(function(){
         Route::get('/dashboard', 'index')->name('dashboard');
+        Route::resource('entries', EntryController::class);
+        Route::resource('users', UserController::class);
     });
 });
 
