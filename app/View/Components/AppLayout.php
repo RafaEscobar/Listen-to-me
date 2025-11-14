@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class AppLayout extends Component
 {
+    public $user;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($user = null)
     {
-        //
+        $this->user = $user;
     }
 
     /**

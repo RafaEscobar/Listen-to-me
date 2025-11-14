@@ -9,10 +9,9 @@
 </head>
 <body class="h-screen w-screen flex bg-gray-100">
     <x-sidebar active="{{request()->path()}}" />
-
     <main class="flex-1 p-2 lg:ml-64">
+        <x-modal-profile :user=$user />
         {{ $slot }}
     </main>
 </body>
-
 </html>
